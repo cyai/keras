@@ -121,9 +121,7 @@ def write_ckpt_to_h5(path_h5, path_ckpt, keras_model, use_ema=True):
                     stacklevel=2,
                 )
             else:
-                raise ValueError(
-                    f"Fail to load {w.name} from {tf_name}"
-                )
+                raise ValueError(f"Fail to load {w.name} from {tf_name}")
 
     total_weights = len(keras_model.weights)
     io_utils.print_msg(f"{changed_weights}/{total_weights} weights updated")
@@ -209,14 +207,18 @@ def keras_name_to_tf_name_stem_top(
 
     # stem batch normalization
     for bn_weights in ["beta", "gamma", "moving_mean", "moving_variance"]:
-        tf_name_str = f"{model_name_tf}/stem/tpu_batch_normalization/{bn_weights}{ema}"
+        tf_name_str = (
+            f"{model_name_tf}/stem/tpu_batch_normalization/{bn_weights}{ema}"
+        )
         tf_name = tf_name_str
         stem_top_dict[f"stem_bn/{bn_weights}:0"] = tf_name
 
     # top / head batch normalization
-    bn_weights_list = ["beta", "gamma", "moving_mean", "moving_variance"] 
+    bn_weights_list = ["beta", "gamma", "moving_mean", "moving_variance"]
     for bn_weights in bn_weights_list:
-        tf_name = f"{model_name_tf}/head/tpu_batch_normalization/{bn_weights}{ema}"
+        tf_name = (
+            f"{model_name_tf}/head/tpu_batch_normalization/{bn_weights}{ema}"
+        )
         stem_top_dict[f"top_bn/{bn_weights}:0"] = tf_name
 
     if keras_name in stem_top_dict:
@@ -251,9 +253,7 @@ def keras_name_to_tf_name_block(
     """
 
     if keras_block not in keras_name:
-        raise ValueError(
-            f"block name {keras_block} not found in {keras_name}"
-        )
+        raise ValueError(f"block name {keras_block} not found in {keras_name}")
 
     # all blocks in the first group will not have expand conv and bn
     is_first_blocks = keras_block[5] == "1"

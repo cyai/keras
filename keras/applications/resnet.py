@@ -85,7 +85,7 @@ def ResNet(
     pooling=None,
     classes=1000,
     classifier_activation="softmax",
-    **kwargs
+    **kwargs,
 ):
     """Instantiates the ResNet, ResNetV2, and ResNeXt architecture.
 
@@ -508,7 +508,7 @@ def ResNet50(
     input_shape=None,
     pooling=None,
     classes=1000,
-    **kwargs
+    **kwargs,
 ):
     """Instantiates the ResNet50 architecture."""
 
@@ -529,7 +529,7 @@ def ResNet50(
         input_shape,
         pooling,
         classes,
-        **kwargs
+        **kwargs,
     )
 
 
@@ -543,7 +543,7 @@ def ResNet101(
     input_shape=None,
     pooling=None,
     classes=1000,
-    **kwargs
+    **kwargs,
 ):
     """Instantiates the ResNet101 architecture."""
 
@@ -564,7 +564,7 @@ def ResNet101(
         input_shape,
         pooling,
         classes,
-        **kwargs
+        **kwargs,
     )
 
 
@@ -578,7 +578,7 @@ def ResNet152(
     input_shape=None,
     pooling=None,
     classes=1000,
-    **kwargs
+    **kwargs,
 ):
     """Instantiates the ResNet152 architecture."""
 
@@ -599,7 +599,7 @@ def ResNet152(
         input_shape,
         pooling,
         classes,
-        **kwargs
+        **kwargs,
     )
 
 
