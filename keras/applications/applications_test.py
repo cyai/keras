@@ -142,9 +142,7 @@ class ApplicationsTest(tf.test.TestCase, parameterized.TestCase):
             )
         for v1, v2 in zip(shape1, shape2):
             if v1 != v2:
-                raise AssertionError(
-                    f"Shapes differ: {shape1} vs {shape2}"
-                )
+                raise AssertionError(f"Shapes differ: {shape1} vs {shape2}")
 
     @parameterized.parameters(*MODEL_LIST)
     def test_application_base(self, app, _):

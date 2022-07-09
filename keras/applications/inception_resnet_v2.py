@@ -52,7 +52,7 @@ def InceptionResNetV2(
     pooling=None,
     classes=1000,
     classifier_activation="softmax",
-    **kwargs
+    **kwargs,
 ):
     """Instantiates the Inception-ResNet v2 architecture.
 

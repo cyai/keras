@@ -618,9 +618,9 @@ def _adjust_block(p, ip, filters, block_id=None):
 
         elif p_shape[img_dim] != ip_shape[img_dim]:
             with backend.name_scope(f"adjust_reduction_block_{block_id}"):
-                p = layers.Activation(
-                    "relu", name=f"adjust_relu_1_{block_id}"
-                )(p)
+                p = layers.Activation("relu", name=f"adjust_relu_1_{block_id}")(
+                    p
+                )
                 p1 = layers.AveragePooling2D(
                     (1, 1),
                     strides=(2, 2),

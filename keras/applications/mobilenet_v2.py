@@ -450,9 +450,7 @@ def MobileNetV2(
         inputs = img_input
 
     # Create model.
-    model = training.Model(
-        inputs, x, name=f"mobilenetv2_{alpha:0.2f}_{rows}"
-    )
+    model = training.Model(inputs, x, name=f"mobilenetv2_{alpha:0.2f}_{rows}")
 
     # Load weights.
     if weights == "imagenet":
